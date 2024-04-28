@@ -1,0 +1,31 @@
+import java.lang.Math;
+
+public class ShortestPath_North_South_East_West {
+
+    // Method to calculate the shortest distance
+    public static double shortestDirection(String s) {
+        int x = 0, y = 0; // Initialize variables to represent the current position in the grid
+
+        // Iterate through each character in the input string
+        for (int i = 0; i < s.length(); i++) {
+            // Update position based on the direction
+            if (s.charAt(i) == 'N') {
+                y += 1; // Move North (increase y coordinate)
+            } else if (s.charAt(i) == 'E') {
+                x += 1; // Move East (increase x coordinate)
+            } else if (s.charAt(i) == 'W') {
+                x -= 1; // Move West (decrease x coordinate)
+            } else {
+                y -= 1; // Move South (decrease y coordinate)
+            }
+        }
+
+        // Calculate the Euclidean distance from the starting point (0, 0) to the final point (x, y)
+        double ans = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
+
+        return ans; // Return the shortest distance
+    }
+
+    // Main method
+    public static void main(String[] args) {
+        String s = "
