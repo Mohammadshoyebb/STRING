@@ -1,0 +1,109 @@
+/*
+ * 1528. Shuffle String
+ Solved
+ Easy
+ Topics
+ Companies
+ Hint
+ You are given a string s and an integer array indices of the same length. The string s will be shuffled such that the character at the ith position moves to indices[i] in the shuffled string.
+ 
+ Return the shuffled string.
+ 
+  
+ 
+ Example 1:
+ 
+ 
+ Input: s = "codeleet", indices = [4,5,6,7,0,2,1,3]
+ Output: "leetcode"
+ Explanation: As shown, "codeleet" becomes "leetcode" after shuffling.
+ Example 2:
+ 
+ Input: s = "abc", indices = [0,1,2]
+ Output: "abc"
+ Explanation: After shuffling, each character remains in its position.
+  
+ 
+ Constraints:
+ 
+ s.length == indices.length == n
+ 1 <= n <= 100
+ s consists of only lowercase English letters.
+ 0 <= indices[i] < n
+ All values of indices are unique.
+ */
+
+
+
+
+
+//========================================================================= SOLUTION ============================================================================================================
+public class ShuffleString {
+    public static String restoreString(String s, int[] indices) {
+        char[] shuffled = new char[s.length()]; // Create an array to store the shuffled characters
+        
+        for (int i = 0; i < s.length(); i++) {
+            shuffled[indices[i]] = s.charAt(i); // Place each character of s at its corresponding index in shuffled
+        }
+        
+        return new String(shuffled); // Convert the char array to a string and return
+    }
+
+    public static void main(String[] args) {
+        // Example 1
+        String s1 = "codeleet";
+        int[] indices1 = {4, 5, 6, 7, 0, 2, 1, 3};
+        String result1 = restoreString(s1, indices1);
+        System.out.println("Example 1:");
+        System.out.println("Input: s = \"" + s1 + "\", indices = " + Arrays.toString(indices1));
+        System.out.println("Output: \"" + result1 + "\"");
+
+        // Example 2
+        String s2 = "abc";
+        int[] indices2 = {0, 1, 2};
+        String result2 = restoreString(s2, indices2);
+   
+//===========================================================================ANOTHER METHOD USING HASHMAP========================================================================================
+
+
+// import java.util.HashMap;
+
+// public class ShuffleString {
+//     public static String restoreString(String s, int[] indices) {
+//         HashMap<Integer, Character> map = new HashMap<>();
+        
+//         // Populate the HashMap with indices and characters
+//         for (int i = 0; i < s.length(); i++) {
+//             map.put(indices[i], s.charAt(i));
+//         }
+        
+//         // Build the shuffled string using characters from the HashMap
+//         StringBuilder sb = new StringBuilder();
+//         for (int i = 0; i < s.length(); i++) {
+//             sb.append(map.get(i));
+//         }
+        
+//         return sb.toString();
+//     }
+
+//     public static void main(String[] args) {
+//         // Example 1
+//         String s1 = "codeleet";
+//         int[] indices1 = {4, 5, 6, 7, 0, 2, 1, 3};
+//         String result1 = restoreString(s1, indices1);
+//         System.out.println("Example 1:");
+//         System.out.println("Input: s = \"" + s1 + "\", indices = " + Arrays.toString(indices1));
+//         System.out.println("Output: \"" + result1 + "\"");
+
+//         // Example 2
+//         String s2 = "abc";
+//         int[] indices2 = {0, 1, 2};
+//         String result2 = restoreString(s2, indices2);
+//         System.out.println("\nExample 2:");
+//         System.out.println("Input: s = \"" + s2 + "\", indices = " + Arrays.toString(indices2));
+//         System.out.println("Output: \"" + result2 + "\"");
+//     }
+// }
+
+
+
