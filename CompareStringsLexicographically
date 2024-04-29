@@ -1,0 +1,22 @@
+public class CompareStringsLexicographically {
+    public static void main(String[] args) {
+        // Array of fruits
+        String[] fruit = {"mango","grapes","guavava","banana","apple","pineapple"};
+
+        // Initialize variable to store the largest string
+        String largest = fruit[0];
+
+        // Iterate through the array
+        for(int i = 1; i < fruit.length; i++){
+            // Compare the current element with the largest string
+            // If the current element is lexicographically greater than the largest string,
+            // update the largest string
+            if(largest.compareTo(fruit[i]) < 0){
+                largest = fruit[i];
+            }
+        }
+
+        // Print the largest lexicographically string
+        System.out.println(largest);
+    }
+}
